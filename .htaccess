@@ -1,15 +1,1 @@
-<Files "config.php">
-    Require all denied
-</Files>
 
-<Files "api.php">
-    # Hanya bisa diakses via POST dari domain sendiri
-    SetEnvIf Request_Method !^POST$ deny_access
-    Order allow,deny
-    Allow from all
-    Deny from env=deny_access
-</Files>
-
-<FilesMatch "\.(bak|original|log)$">
-    Require all denied
-</FilesMatch>
